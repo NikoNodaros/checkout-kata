@@ -19,7 +19,8 @@ namespace CheckoutKata.Core.Models
 
         public int GetTotalPrice()
         {
-            return 37;
+            return _pricingRules.Sum(rule => rule.CalculateTotal(_items));
         }
+
     }
 }
